@@ -8,24 +8,30 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/hell',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/index',
       name: 'Index',
-      component: () => import('../views/index/index.vue')
+      component: () => import('../views/index/index'),
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/sign-up',
       name: 'SignUp',
-      component: () => import('../views/sign-up/index.vue')
+      component: () => import('../views/sign-up/index')
     },
     {
       path: '/sign-in',
       name: 'SignIn',
-      component: () => import('../views/sign-in/index.vue')
+      component: () => import('../views/sign-in/index')
     }
   ]
 })

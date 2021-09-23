@@ -12,23 +12,24 @@ export default {
   data () {
     return {
       SignInForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: 'admin'
       }
     }
   },
   methods: {
     sign_in () {
-      this.$axios.post('sign-in', {
+      let _this = this
+      this.$axios.post('/sign-in', {
         username: this.SignInForm.username,
         password: this.SignInForm.password
       }).then(successResponse => {
-        if (successResponse.data.code === 200) {
-          console.log(successResponse)
-          this.$router.replace({path: '/index'})
-        }
+        window.console.log(successResponse)
+        _this.$store.commit('sign_in', _this.SignInForm)
+        let path = this.$route.query.redirect
+        this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
       }).catch(failureResponse => {
-        console.error(failureResponse)
+        window.console.error(failureResponse)
       })
     }
   }
