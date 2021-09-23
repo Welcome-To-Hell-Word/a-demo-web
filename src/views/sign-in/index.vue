@@ -39,18 +39,18 @@ export default {
 </script>
 
 <style>
-  #SignIn{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-  }
-  #SignIn_Form{
-    width: 300px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    border: 1px black solid;
-  }
+#SignIn{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+#SignIn_Form{
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  border: 1px black solid;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="MenuY">
-    <ul>
+    <ul id="MenuY_ul">
       <li>
         <div>Menu-1</div>
         <ul>
@@ -32,5 +32,7 @@ export default {
 </script>
 
 <style>
-
+#MenuY_ul>li>div{
+  background: #FF6600;
+}
 </style>
