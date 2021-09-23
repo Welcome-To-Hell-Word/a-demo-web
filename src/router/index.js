@@ -13,6 +13,16 @@ export default new Router({
       component: HelloWorld
     },
     {
+      path: '/index',
+      name: 'Index',
+      component: () => import('../views/index/index.vue')
+    },
+    {
+      path: '/sign-up',
+      name: 'SignUp',
+      component: () => import('../views/sign-up/index.vue')
+    },
+    {
       path: '/sign-in',
       name: 'SignIn',
       component: () => import('../views/sign-in/index.vue')

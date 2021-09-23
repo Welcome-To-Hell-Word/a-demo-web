@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: 'index',
+    name: 'SignIn',
     data () {
       return {
         SignInForm: {
@@ -19,7 +19,17 @@
     },
     methods: {
       sign_in () {
-        alert('Hell Hell')
+        this.$axios.post('sign-in', {
+          username: this.SignInForm.username,
+          password: this.SignInForm.password
+        }).then(successResponse => {
+          if (successResponse.data.code === 200) {
+            console.log(successResponse)
+            this.$router.replace({path: '/index'})
+          }
+        }).catch(failureResponse => {
+          console.error(failureResponse)
+        })
       }
     }
   }

@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+let axios = require('axios')
+axios.defaults.baseURL = 'http://127.0.0.1:10001/api'
+
+Vue.prototype.$axios = axios
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
