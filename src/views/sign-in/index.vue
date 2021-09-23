@@ -7,32 +7,32 @@
 </template>
 
 <script>
-  export default {
-    name: 'SignIn',
-    data () {
-      return {
-        SignInForm: {
-          username: '',
-          password: ''
-        }
-      }
-    },
-    methods: {
-      sign_in () {
-        this.$axios.post('sign-in', {
-          username: this.SignInForm.username,
-          password: this.SignInForm.password
-        }).then(successResponse => {
-          if (successResponse.data.code === 200) {
-            console.log(successResponse)
-            this.$router.replace({path: '/index'})
-          }
-        }).catch(failureResponse => {
-          console.error(failureResponse)
-        })
+export default {
+  name: 'SignIn',
+  data () {
+    return {
+      SignInForm: {
+        username: '',
+        password: ''
       }
     }
+  },
+  methods: {
+    sign_in () {
+      this.$axios.post('sign-in', {
+        username: this.SignInForm.username,
+        password: this.SignInForm.password
+      }).then(successResponse => {
+        if (successResponse.data.code === 200) {
+          console.log(successResponse)
+          this.$router.replace({path: '/index'})
+        }
+      }).catch(failureResponse => {
+        console.error(failureResponse)
+      })
+    }
   }
+}
 </script>
 
 <style></style>
