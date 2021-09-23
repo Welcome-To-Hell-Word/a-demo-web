@@ -18,7 +18,13 @@ export default {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+body{
+  width: 100vw;
+  height: 100vh;
+}
 #app {
-
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 </style>

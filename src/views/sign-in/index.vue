@@ -1,8 +1,10 @@
 <template>
   <div id="SignIn">
-    <div>username:<input v-model="SignInForm.username" type="text" placeholder="username"></div>
-    <div>password:<input v-model="SignInForm.password" type="password" placeholder="password"></div>
-    <div><button v-on:click="sign_in">Sign in</button></div>
+    <div id="SignIn_Form">
+      <div>username:<input v-model="SignInForm.username" type="text" placeholder="username"></div>
+      <div>password:<input v-model="SignInForm.password" type="password" placeholder="password"></div>
+      <div><button v-on:click="sign_in">Sign in</button></div>
+    </div>
   </div>
 </template>
 
@@ -36,4 +38,19 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+  #SignIn{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  #SignIn_Form{
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border: 1px black solid;
+  }
+</style>
