@@ -54,5 +54,13 @@ export default {
 </script>
 
 <style>
-
+#MenuY{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.MenuY_ul_li_div{
+  width: 100px;
+  height: 50px;
+}
 </style>
