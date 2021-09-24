@@ -1,19 +1,34 @@
 <template>
   <div id="MenuY">
-    <ul id="MenuY_ul" v-on:click="OpenOrHidden">
+    <ul id="MenuY_ul">
       <li>
         <div class="MenuY_ul_li_div">Menu-1</div>
-        <ul>
-          <li>
-            <div class="MenuY_ul_li_div">Menu-1-1</div>
-          </li>
-          <li>
-            <div class="MenuY_ul_li_div">Menu-1-2</div>
-          </li>
-          <li>
-            <div class="MenuY_ul_li_div">Menu-1-3</div>
-          </li>
-        </ul>
+        <div class="MenuY_ul_li_child_uls">
+          <ul>
+            <li>
+              <div class="MenuY_ul_li_div">Menu-1-1</div>
+            </li>
+            <li>
+              <div class="MenuY_ul_li_div">Menu-1-2</div>
+              <div class="MenuY_ul_li_child_uls">
+                <ul>
+                  <li>
+                    <div class="MenuY_ul_li_div">Menu-1-2-1</div>
+                  </li>
+                  <li>
+                    <div class="MenuY_ul_li_div">Menu-1-2-2</div>
+                  </li>
+                  <li>
+                    <div class="MenuY_ul_li_div">Menu-1-2-3</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="MenuY_ul_li_div">Menu-1-3</div>
+            </li>
+          </ul>
+        </div>
       </li>
       <li>
         <div class="MenuY_ul_li_div">Menu-2</div>
@@ -47,6 +62,17 @@ export default {
         }
         div.style.color = 'white'
         div.style.background = 'black'
+        let childUlsDiv = div.parentNode.getElementsByClassName('MenuY_ul_li_child_uls')[0]
+        if (childUlsDiv != null) {
+          switch (childUlsDiv.style.display) {
+            case '' :
+              childUlsDiv.style.display = 'none'
+              break
+            case 'none' :
+              childUlsDiv.style.display = ''
+              break
+          }
+        }
       })
     }
   }
@@ -56,11 +82,11 @@ export default {
 <style>
 #MenuY{
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
 }
 .MenuY_ul_li_div{
   width: 100px;
-  height: 50px;
+  height: 30px;
 }
 </style>
