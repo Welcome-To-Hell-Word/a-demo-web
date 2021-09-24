@@ -1,6 +1,6 @@
 <template>
   <div id="Index">
-    <div>Index</div>
+    <div v-on:click="MenuY_hidden">Index</div>
     <menu-y></menu-y>
   </div>
 </template>
@@ -9,7 +9,20 @@
 import MenuY from '../../components/MenuY'
 export default {
   name: 'Index',
-  components: {MenuY}
+  components: {MenuY},
+  methods: {
+    MenuY_hidden () {
+      let MenuY = document.getElementById('MenuY')
+      switch (MenuY.style.display) {
+        case '' :
+          MenuY.style.display = 'none'
+          break
+        case 'none' :
+          MenuY.style.display = ''
+          break
+      }
+    }
+  }
 }
 </script>
 
