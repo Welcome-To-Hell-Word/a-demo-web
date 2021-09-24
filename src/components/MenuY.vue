@@ -1,6 +1,6 @@
 <template>
   <div id="MenuY">
-    <ul id="MenuY_ul">
+    <ul id="MenuY_ul" v-on:click="OpenOrHidden">
       <li>
         <div>Menu-1</div>
         <ul>
@@ -27,12 +27,22 @@
 
 <script>
 export default {
-  name: 'MenuY'
+  name: 'MenuY',
+  methods: {
+    OpenOrHidden (e) {
+      console.log(e)
+      console.log(e.target)
+      console.log(e.currentTarget)
+    }
+  }
 }
 </script>
 
 <style>
 #MenuY_ul>li>div{
   background: #FF6600;
+}
+li{
+  display: none;
 }
 </style>
