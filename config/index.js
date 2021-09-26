@@ -14,11 +14,11 @@ module.exports = {
       /** 加上这个 可以不用在 controller 加 @CrossOrigin注解 **/
       /** 搭配 src/main.js の axios.defaults.baseURL = '/path' **/
       /** ↓↓↓↓↓↓↓↓↓↓ **/
-      '/path': {
+      '/ok': {
         target: 'http://127.0.0.1:10001/master-spark/module',
         changeOrigin: true,
         pathRewrite: {
-          '^/path': ''
+          '^/ok': ''
         }
       }
       /** ↑↑↑↑↑↑↑↑↑↑ **/
