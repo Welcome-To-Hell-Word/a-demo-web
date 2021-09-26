@@ -6,7 +6,14 @@ import router from './router'
 import store from './store'
 
 let axios = require('axios')
-axios.defaults.baseURL = 'http://127.0.0.1:10001/master-spark/module'
+
+/** 举个栗子 /user/sign-in **/
+
+// axios.defaults.baseURL = 'http://127.0.0.1:10001/master-spark/module'
+/** Request URL: http://127.0.0.1:10001/master-spark/module/user/sign-in **/
+
+axios.defaults.baseURL = '/path'
+/** Request URL: http://127.0.0.1:40404/path/user/sign-in **/
 
 Vue.prototype.$axios = axios
 

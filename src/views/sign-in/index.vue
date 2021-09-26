@@ -26,10 +26,11 @@ export default {
         username: this.SignInForm.username,
         password: this.SignInForm.password
       }).then(successResponse => {
-        window.console.log(successResponse)
-        _this.$store.commit('sign_in', _this.SignInForm)
-        let path = this.$route.query.redirect
-        this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
+        if (successResponse.data.code === '200') {
+          _this.$store.commit('sign_in', _this.SignInForm)
+          let path = this.$route.query.redirect
+          this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
+        }
       }).catch(failureResponse => {
         window.console.error(failureResponse)
       })
