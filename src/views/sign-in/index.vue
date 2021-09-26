@@ -22,7 +22,7 @@ export default {
   methods: {
     sign_in () {
       let _this = this
-      this.$axios.post('/sign-in', {
+      this.$axios.post('/user/sign-in', {
         username: this.SignInForm.username,
         password: this.SignInForm.password
       }).then(successResponse => {

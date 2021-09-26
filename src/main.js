@@ -6,7 +6,7 @@ import router from './router'
 import store from './store'
 
 let axios = require('axios')
-axios.defaults.baseURL = 'http://127.0.0.1:10001/api'
+axios.defaults.baseURL = 'http://127.0.0.1:10001/master-spark/module'
 
 Vue.prototype.$axios = axios
 
