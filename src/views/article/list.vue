@@ -3,10 +3,10 @@
     <div id="ArticleListForm">
       <div class="ArticleCard" v-for="item in ArticleListForm" :key="item.id">
         <div class="ArticleCardPhoto">
-          <img class="ArticleCardPhotoImg" :src="item.photo">
+          <img class="ArticleCardPhotoImg" :src="item.photo" v-on:click="GetById(item.id)">
         </div>
         <div class="ArticleCardInfo">
-          <div>{{item.title}}</div>
+          <div v-on:click="GetById(item.id)"><a>{{item.title}}</a></div>
           <div>{{item.username}}</div>
         </div>
       </div>
@@ -39,6 +39,15 @@ export default {
           username: 'admin03'
         }
       ]
+    }
+  },
+  methods: {
+    GetById (id) {
+      this.$axios.get('/article/GetById/' + id).then(result => {
+        window.console.log(result.data)
+      }).catch(result => {
+        window.console.error(result)
+      })
     }
   }
 }
