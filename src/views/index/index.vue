@@ -3,6 +3,7 @@
     <div>当前登录:{{current_user.username}}</div>
     <div v-on:click="MenuY_hidden">Index</div>
     <menu-y></menu-y>
+    <router-view/>
   </div>
 </template>
 

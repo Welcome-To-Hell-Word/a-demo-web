@@ -25,7 +25,14 @@ export default new Router({
       component: () => import('../views/index/index'),
       meta: {
         requireAuth: true
-      }
+      },
+      children: [
+        {
+          path: 'article/list',
+          name: 'ArticleList',
+          component: () => import('../views/article/list')
+        }
+      ]
     },
     {
       path: '/sign-up',

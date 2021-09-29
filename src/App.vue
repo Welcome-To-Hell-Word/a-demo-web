@@ -21,10 +21,12 @@ export default {
 body{
   width: 100vw;
   height: 100vh;
+  min-width: 1000px;
+  min-height: 1000px;
 }
 #app {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 </style>
