@@ -1,5 +1,6 @@
 <template>
   <div id="Index">
+    <div>当前登录:{{current_user.username}}</div>
     <div v-on:click="MenuY_hidden">Index</div>
     <menu-y></menu-y>
   </div>
@@ -9,6 +10,11 @@
 import MenuY from '../../components/MenuY'
 export default {
   name: 'Index',
+  data () {
+    return {
+      current_user: this.$store.state.user
+    }
+  },
   components: {MenuY},
   methods: {
     MenuY_hidden () {

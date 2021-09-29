@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       /** 加上这个 可以不用在 controller 加 @CrossOrigin注解 **/
-      /** 搭配 src/main.js の axios.defaults.baseURL = '/path' **/
+      /** 搭配 src/main.js の axios.defaults.baseURL = '/ok' **/
       /** ↓↓↓↓↓↓↓↓↓↓ **/
       '/ok': {
         target: 'http://127.0.0.1:10001/master-spark/module',

@@ -27,7 +27,7 @@ export default {
         password: this.SignInForm.password
       }).then(successResponse => {
         if (successResponse.data.code === '200') {
-          _this.$store.commit('sign_in', _this.SignInForm)
+          _this.$store.commit('current_user', _this.SignInForm)
           let path = this.$route.query.redirect
           this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
         }
