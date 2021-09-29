@@ -47,7 +47,7 @@ export default {
 <style>
 #ArticleList{
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 #ArticleListForm{
   width: 100%;
